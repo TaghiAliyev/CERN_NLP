@@ -1,0 +1,12 @@
+# Use an official Python runtime as a parent image
+FROM python:2.7-slim
+MAINTAINER Taghi Aliyev (taghi.aliyev@cern.ch)
+
+# Set the working directory
+
+# Mount and copy the volume with relevant pieces to the local machine
+
+
+# Install the required basic libraries and software
+
+# Run the script to initialize the environmental parameters.

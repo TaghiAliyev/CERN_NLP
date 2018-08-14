@@ -22,4 +22,4 @@ unzip $GLOVE_DIR/glove.840B.300d.zip -d $GLOVE_DIR
 # unzip $FASTTEXT_DIR/wiki-news-300d-1M.vec.zip -d $FASTTEXT_DIR
 
 # Download Spacy language models
-python3 -m spacy download en
+python2.7 -m spacy download en
