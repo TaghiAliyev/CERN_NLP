@@ -65,17 +65,29 @@ def process_file(filename, data_type, word_counter, char_counter):
                     y1s, y2s = [], []
                     answer_texts = []
                     for answer in qa["answers"]:
-                        answer_text = answer["text"]
-                        answer_start = answer['answer_start']
-                        answer_end = answer_start + len(answer_text)
-                        answer_texts.append(answer_text)
-                        answer_span = []
-                        for idx, span in enumerate(spans):
-                            if not (answer_end <= span[0] or answer_start >= span[1]):
-                                answer_span.append(idx)
-                        y1, y2 = answer_span[0], answer_span[-1]
-                        y1s.append(y1)
-                        y2s.append(y2)
+                        if qa["is_impossible"] == false:
+                            answer_text = answer["text"]
+                            answer_start = answer['answer_start']
+                            answer_end = answer_start + len(answer_text)
+                            answer_texts.append(answer_text)
+                            answer_span = []
+
+                            # answer_exist = true
+
+                            for idx, span in enumerate(spans):
+                                if not (answer_end <= span[0] or answer_start >= span[1]):
+                                    answer_span.append(idx)
+                            y1, y2 = answer_span[0], answer_span[-1]
+                            y1s.append(y1)
+                            y2s.append(y2)
+                        # !
+                        elif qa["is_impossible"] == true:
+                            answer_text = ""
+                            answer_texts.append(answer_text)
+                            # answer_exist = false
+                            y1, y2 = 0, 0
+                            y1s.append(y1)
+                            y2s.append(y2)
                     example = {"context_tokens": context_tokens, "context_chars": context_chars, "ques_tokens": ques_tokens,
                                "ques_chars": ques_chars, "y1s": y1s, "y2s": y2s, "id": total}
                     examples.append(example)
