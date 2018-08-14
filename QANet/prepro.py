@@ -36,6 +36,7 @@ def convert_idx(text, tokens):
 
 def process_file(filename, data_type, word_counter, char_counter):
     print("Generating {} examples...".format(data_type))
+    print(filename)
     examples = []
     eval_examples = {}
     total = 0
@@ -64,28 +65,26 @@ def process_file(filename, data_type, word_counter, char_counter):
                             char_counter[char] += 1
                     y1s, y2s = [], []
                     answer_texts = []
-                    for answer in qa["answers"]:
-                        if qa["is_impossible"] == false:
+                    if (qa["is_impossible"]):
+                        answer_text = ""
+                        answer_texts.append(answer_text)
+                        # answer_exist = false
+                        y1, y2 = 0, 0
+                        y1s.append(y1)
+                        y2s.append(y2)
+                    else:
+                        for answer in qa["answers"]:
+                            #print('Debug print')
                             answer_text = answer["text"]
                             answer_start = answer['answer_start']
                             answer_end = answer_start + len(answer_text)
                             answer_texts.append(answer_text)
                             answer_span = []
 
-                            # answer_exist = true
-
                             for idx, span in enumerate(spans):
                                 if not (answer_end <= span[0] or answer_start >= span[1]):
                                     answer_span.append(idx)
                             y1, y2 = answer_span[0], answer_span[-1]
-                            y1s.append(y1)
-                            y2s.append(y2)
-                        # !
-                        elif qa["is_impossible"] == true:
-                            answer_text = ""
-                            answer_texts.append(answer_text)
-                            # answer_exist = false
-                            y1, y2 = 0, 0
                             y1s.append(y1)
                             y2s.append(y2)
                     example = {"context_tokens": context_tokens, "context_chars": context_chars, "ques_tokens": ques_tokens,

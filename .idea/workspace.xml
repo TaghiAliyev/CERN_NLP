@@ -2,16 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ccbd5e7f-c266-4fa6-8d60-a9ec9027ea64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/CERN_NLP.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DSSM_Amina_Test/Tutorial.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docker/DOCKERFILE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docker/init.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Docker/usual_requirements.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prototype.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PrototypeInput.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QANet/config.py" afterPath="$PROJECT_DIR$/QANet/config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QANet/download.sh" afterPath="$PROJECT_DIR$/QANet/download.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QANet/prepro.py" afterPath="$PROJECT_DIR$/QANet/prepro.py" />
@@ -25,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/QANet/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+            <state relative-caret-position="570">
+              <caret line="98" column="36" lean-forward="false" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -37,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prepro.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="prepro.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/QANet/prepro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+            <state relative-caret-position="436">
+              <caret line="74" column="25" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -83,16 +73,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="download.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/QANet/download.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="30" lean-forward="false" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DOCKERFILE" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Docker/DOCKERFILE">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,6 +107,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>y1</find>
+      <find>is_impossible&quot;: true</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,9 +121,9 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/Docker/usual_requirements.txt" />
         <option value="$PROJECT_DIR$/Docker/DOCKERFILE" />
-        <option value="$PROJECT_DIR$/QANet/config.py" />
-        <option value="$PROJECT_DIR$/QANet/prepro.py" />
         <option value="$PROJECT_DIR$/DSSM_Amina_Test/Tutorial.py" />
+        <option value="$PROJECT_DIR$/QANet/prepro.py" />
+        <option value="$PROJECT_DIR$/QANet/config.py" />
       </list>
     </option>
   </component>
@@ -224,19 +205,6 @@
               <item name="CERN_NLP" type="462c0819:PsiDirectoryNode" />
               <item name="QANet" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CERN_NLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CERN_NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="QANet" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CERN_NLP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CERN_NLP" type="462c0819:PsiDirectoryNode" />
-              <item name="QANet" type="462c0819:PsiDirectoryNode" />
-              <item name="train" type="462c0819:PsiDirectoryNode" />
-              <item name="FRC" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -247,7 +215,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$USER_HOME$/explainable-cnn" />
+    <property name="last_opened_file_path" value="$USER_HOME$/data/squad/dev-v2.0.json" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -322,7 +290,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1882" y="-4" width="2497" height="1452" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14985709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -331,7 +298,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32927758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32927758" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -352,23 +319,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/QANet/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="59" column="50" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QANet/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1845">
@@ -708,16 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/QANet/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="58" lean-forward="false" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/QANet/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="785">
@@ -746,12 +686,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/data/squad/train-v2.0.json">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="254">
+          <caret line="0" column="625357" lean-forward="false" selection-start-line="0" selection-start-column="625337" selection-end-line="0" selection-end-column="625357" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/data/squad/dev-v2.0.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="0" column="2305" lean-forward="true" selection-start-line="0" selection-start-column="2305" selection-end-line="0" selection-end-column="2305" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/QANet/prepro.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+        <state relative-caret-position="436">
+          <caret line="74" column="25" lean-forward="false" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QANet/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="98" column="36" lean-forward="false" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
