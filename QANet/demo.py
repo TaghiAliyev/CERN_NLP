@@ -47,7 +47,7 @@ class Demo(object):
         run_event = threading.Event()
         run_event.set()
         threading.Thread(target=self.demo_backend, args = [model, config, run_event]).start()
-        app.run(port=8080, host='0.0.0.0')
+        app.run(port=16006, host='127.0.0.1')
         try:
             while 1:
                 sleep(.1)

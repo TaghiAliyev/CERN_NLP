@@ -33,6 +33,7 @@ def train(config):
     graph = tf.Graph()
     with graph.as_default() as g:
         train_dataset = get_batch_dataset(config.train_record_file, parser, config)
+        print(train_dataset)
         dev_dataset = get_dataset(config.dev_record_file, parser, config)
         handle = tf.placeholder(tf.string, shape=[])
         iterator = tf.data.Iterator.from_string_handle(
@@ -50,20 +51,46 @@ def train(config):
         best_f1 = 0.
         best_em = 0.
 
+        print(sess_config)
+
         with tf.Session(config=sess_config) as sess:
             writer = tf.summary.FileWriter(config.log_dir)
             sess.run(tf.global_variables_initializer())
             saver = tf.train.Saver()
             train_handle = sess.run(train_iterator.string_handle())
             dev_handle = sess.run(dev_iterator.string_handle())
+            # print(train_handle)
+            # print(dev_handle)
             if os.path.exists(os.path.join(config.save_dir, "checkpoint")):
                 saver.restore(sess, tf.train.latest_checkpoint(config.save_dir))
             global_step = max(sess.run(model.global_step), 1)
+            # print(global_step)
 
             for _ in tqdm(range(global_step, config.num_steps + 1)):
                 global_step = sess.run(model.global_step) + 1
-                loss, train_op = sess.run([model.loss, model.train_op], feed_dict={
+                y1, y2, yp1, yp2, loss, train_op = sess.run([model.y1, model.y2, model.yp1, model.yp2, model.loss, model.train_op], feed_dict={
                                           handle: train_handle, model.dropout: config.dropout})
+                # print(loss, train_op)
+
+                # print('y1: ')
+                # print(y1)
+                # print('yp1: ')
+                # print(yp1)
+                # print('y2: ')
+                # print(y2)
+                # print('yp2: ')
+                # print(yp2)
+                # print('print start')
+                # for l in logits_model:
+                #     # print(l)
+                #     print(l.shape)
+                # # print(logits_model)
+                # print(yp1_model.shape)
+                # print(yp2_model.shape)
+                # # print(yp2_model.shape)
+                # print(outer.shape)
+                # # print(outer.shape)
+                # print('print end')
                 if global_step % config.period == 0:
                     loss_sum = tf.Summary(value=[tf.Summary.Value(
                         tag="model/loss", simple_value=loss), ])

@@ -19,6 +19,7 @@ class Model(object):
                 self.y1 = tf.placeholder(tf.int32, [None, config.test_para_limit],"answer_index1")
                 self.y2 = tf.placeholder(tf.int32, [None, config.test_para_limit],"answer_index2")
             else:
+                # print('Here')
                 self.c, self.q, self.ch, self.qh, self.y1, self.y2, self.qa_id = batch.get_next()
 
             # self.word_unk = tf.get_variable("word_unk", shape = [config.glove_dim], initializer=initializer())
@@ -165,11 +166,11 @@ class Model(object):
 
             logits1, logits2 = [l for l in self.logits]
 
-            outer = tf.matmul(tf.expand_dims(tf.nn.softmax(logits1), axis=2),
+            self.outer = tf.matmul(tf.expand_dims(tf.nn.softmax(logits1), axis=2),
                               tf.expand_dims(tf.nn.softmax(logits2), axis=1))
-            outer = tf.matrix_band_part(outer, 0, config.ans_limit)
-            self.yp1 = tf.argmax(tf.reduce_max(outer, axis=2), axis=1)
-            self.yp2 = tf.argmax(tf.reduce_max(outer, axis=1), axis=1)
+            self.outer = tf.matrix_band_part(self.outer, 0, config.ans_limit)
+            self.yp1 = tf.argmax(tf.reduce_max(self.outer, axis=2), axis=1)
+            self.yp2 = tf.argmax(tf.reduce_max(self.outer, axis=1), axis=1)
             losses = tf.nn.softmax_cross_entropy_with_logits(
                 logits=logits1, labels=self.y1)
             losses2 = tf.nn.softmax_cross_entropy_with_logits(

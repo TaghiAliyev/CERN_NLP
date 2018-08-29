@@ -24,6 +24,7 @@ def word_tokenize(sent):
 def convert_idx(text, tokens):
     current = 0
     spans = []
+    spans.append((current, current))
     for token in tokens:
         current = text.find(token, current)
         if current < 0:
@@ -96,6 +97,8 @@ def process_file(filename, data_type, word_counter, char_counter):
         print("{} questions in total".format(len(examples)))
     return examples, eval_examples
 
+
+# 70,000 results: Exact Match: 37.7158258233, F1: 32.5636905111
 
 def get_embedding(counter, data_type, limit=-1, emb_file=None, size=None, vec_size=None):
     print("Generating {} embedding...".format(data_type))

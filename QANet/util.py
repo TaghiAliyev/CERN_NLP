@@ -32,6 +32,7 @@ def get_record_parser(config, is_test=False):
             features["context_char_idxs"], tf.int32), [para_limit, char_limit])
         ques_char_idxs = tf.reshape(tf.decode_raw(
             features["ques_char_idxs"], tf.int32), [ques_limit, char_limit])
+        # print('Here')
         y1 = tf.reshape(tf.decode_raw(
             features["y1"], tf.float32), [para_limit])
         y2 = tf.reshape(tf.decode_raw(
