@@ -17,7 +17,7 @@ nlp = spacy.blank("en")
 
 def word_tokenize(sent):
     #print(sent)
-    doc = nlp(unicode(sent))
+    doc = nlp(sent)
     return [token.text for token in doc]
 
 

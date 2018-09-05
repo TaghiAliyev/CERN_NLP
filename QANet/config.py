@@ -11,14 +11,14 @@ from main import train, test, demo
 
 flags = tf.flags
 
-home = os.path.expanduser("~")
+home = os.path.expanduser("/data/taliyev/")
 train_file = os.path.join(home, "data", "squad", "train-v2.0.json")
 dev_file = os.path.join(home, "data", "squad", "dev-v2.0.json")
 test_file = os.path.join(home, "data", "squad", "dev-v2.0.json")
 glove_word_file = os.path.join(home, "data", "glove", "glove.840B.300d.txt")
 
 train_dir = "train"
-model_name = "Squad_No_Answer_Extra_Span_1.0"
+model_name = "Squad_No_Answer_Extra_Span_1.1_96_heads"
 dir_name = os.path.join(train_dir, model_name)
 if not os.path.exists(train_dir):
     os.mkdir(train_dir)
@@ -96,8 +96,8 @@ flags.DEFINE_boolean("is_bucket", False, "build bucket batch iterator or not")
 flags.DEFINE_list("bucket_range", [40, 401, 40], "the range of bucket")
 
 flags.DEFINE_integer("batch_size", 32, "Batch size")
-flags.DEFINE_integer("num_steps", 60000, "Number of steps")
-flags.DEFINE_integer("checkpoint", 5000, "checkpoint to save and evaluate the model")
+flags.DEFINE_integer("num_steps", 150000, "Number of steps")
+flags.DEFINE_integer("checkpoint", 3000, "checkpoint to save and evaluate the model")
 flags.DEFINE_integer("period", 1000, "period to save batch loss")
 flags.DEFINE_integer("val_num_batches", 150, "Number of batches to evaluate the model")
 flags.DEFINE_float("dropout", 0.1, "Dropout prob across the layers")
