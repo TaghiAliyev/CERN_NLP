@@ -27,6 +27,7 @@ def normalize_answer(s):
 
 
 def f1_score(prediction, ground_truth):
+    print(prediction)
     prediction_tokens = normalize_answer(prediction).split()
     ground_truth_tokens = normalize_answer(ground_truth).split()
     common = Counter(prediction_tokens) & Counter(ground_truth_tokens)

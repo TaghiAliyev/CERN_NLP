@@ -6,7 +6,7 @@ import ujson as json
 from collections import Counter
 import numpy as np
 from codecs import open
-
+import JSONHook
 '''
 This file is taken and modified from R-Net by HKUST-KnowComp
 https://github.com/HKUST-KnowComp/R-Net
@@ -14,10 +14,13 @@ https://github.com/HKUST-KnowComp/R-Net
 
 nlp = spacy.blank("en")
 
-
 def word_tokenize(sent):
-    #print(sent)
+    # print(' ', sent)
+    # # sent = sent.encode('ascii')
+    # print(' ', sent)
     doc = nlp(sent)
+    # print("Doc: ", doc)
+    # print([token.text for token in doc])
     return [token.text for token in doc]
 
 
@@ -45,8 +48,10 @@ def process_file(filename, data_type, word_counter, char_counter):
         source = json.load(fh)
         for article in tqdm(source["data"]):
             for para in article["paragraphs"]:
+                # print(para["context"])
                 context = para["context"].replace(
                     "''", '" ').replace("``", '" ')
+                # print(context)
                 context_tokens = word_tokenize(context)
                 context_chars = [list(token) for token in context_tokens]
                 spans = convert_idx(context, context_tokens)
@@ -107,7 +112,7 @@ def get_embedding(counter, data_type, limit=-1, emb_file=None, size=None, vec_si
     if emb_file is not None:
         assert size is not None
         assert vec_size is not None
-        with open(emb_file, "r", encoding="utf-8") as fh:
+        with open(emb_file, "r", encoding='utf-8') as fh:
             for line in tqdm(fh, total=size):
                 array = line.split()
                 word = "".join(array[0:-vec_size])

@@ -120,19 +120,31 @@ def normalize_answer(s):
 
 
 def f1_score(prediction, ground_truth):
+    # print("F1 score printing")
+    # print(prediction)
+    # print(ground_truth)
     prediction_tokens = normalize_answer(prediction).split()
     ground_truth_tokens = normalize_answer(ground_truth).split()
     common = Counter(prediction_tokens) & Counter(ground_truth_tokens)
     num_same = sum(common.values())
+    if prediction == ground_truth:
+        # print('F1 score: 1.0')
+        return 1.0
     if num_same == 0:
+        # print("F1 score: 0.0")
         return 0
     precision = 1.0 * num_same / len(prediction_tokens)
     recall = 1.0 * num_same / len(ground_truth_tokens)
     f1 = (2 * precision * recall) / (precision + recall)
+    # print('F1 Score: ', f1)
     return f1
 
 
 def exact_match_score(prediction, ground_truth):
+    # print('Exact Match scoring')
+    # print(prediction)
+    # print(ground_truth)
+    # print('Score: ', (normalize_answer(prediction) == normalize_answer(ground_truth)))
     return (normalize_answer(prediction) == normalize_answer(ground_truth))
 
 
